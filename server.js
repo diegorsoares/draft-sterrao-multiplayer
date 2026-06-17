@@ -65,7 +65,7 @@ io.on('connection', (socket) => {
     socket.on('gol_marcado', ({ codigoSala, quemMarcou, minuto, time }) => {
         const sala = salas[codigoSala];
         if (sala) {
-            socket.to(codigoSala).emit('gol_recebido', { quem Marcou, minuto, time });
+            socket.to(codigoSala).emit('gol_recebido', { quemMarcou, minuto, time });
         }
     });
 
