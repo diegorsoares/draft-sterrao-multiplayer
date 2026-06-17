@@ -62,7 +62,7 @@ io.on('connection', (socket) => {
     });
 
     // Evento 4: Sincronizar eventos de gol em tempo real
-    socket.on('gol_marcado', ({ codigoSala, quem Marcou, minuto, time }) => {
+    socket.on('gol_marcado', ({ codigoSala, quemMarcou, minuto, time }) => {
         const sala = salas[codigoSala];
         if (sala) {
             socket.to(codigoSala).emit('gol_recebido', { quem Marcou, minuto, time });
